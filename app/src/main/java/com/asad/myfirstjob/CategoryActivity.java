@@ -34,7 +34,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     TextView login, signup;
 
-    String user_email, loginUsername, signupUsername, user_email_new;
+    String user_email, loginUsername, signupUsername, user_email_new, imei;
 
     public static Activity fa;
 
@@ -57,12 +57,14 @@ public class CategoryActivity extends AppCompatActivity {
         user_email = getIntent().getStringExtra("email");
         user_email_new = getIntent().getStringExtra("user_email_new");
         email = getIntent().getStringExtra("email");
+        imei = getIntent().getStringExtra("imei");
 
         login.setText(loginUsername);
         signup.setText(signupUsername);
 
         editor.putString("Username", loginUsername);
         editor.putString("Email", email);
+        editor.putString("imei", imei);
         editor.commit();
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -103,6 +105,7 @@ public class CategoryActivity extends AppCompatActivity {
             }
         });
         as.execute();
+
     }
 
     private static String removeCharAt(String s) {

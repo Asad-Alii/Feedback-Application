@@ -1,8 +1,11 @@
 package com.asad.myfirstjob;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -40,12 +43,15 @@ public class ThankyouActivity extends AppCompatActivity {
     List<String> moodArray = new ArrayList<>();
     String userName, email, timing, androidVersion;
     int CVersion;
+    String ip;
 
     SimpleDateFormat dff = new SimpleDateFormat("dd-MM-yyyy");
     SimpleDateFormat df = new SimpleDateFormat("hh:mm a");
 
     String MANUFACTURER = android.os.Build.MANUFACTURER;
     String myDeviceModel = android.os.Build.MODEL;
+
+    String imei;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +66,7 @@ public class ThankyouActivity extends AppCompatActivity {
 
         userName = pref.getString("Username", "Empty");
         email = pref.getString("Email", "Empty");
+        imei = pref.getString("imei", "Empty");
 
         catId = getIntent().getStringExtra("catId");
         catDesc = getIntent().getStringExtra("catDesc");
@@ -73,6 +80,11 @@ public class ThankyouActivity extends AppCompatActivity {
         moodArray = getIntent().getStringArrayListExtra("moodArray");
 
         login.setText("Mr. " + userName);
+
+        WifiManager wifiMan = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        WifiInfo wifiInf = wifiMan.getConnectionInfo();
+        int ipAddress = wifiInf.getIpAddress();
+        ip = String.format("%d.%d.%d.%d", (ipAddress & 0xff),(ipAddress >> 8 & 0xff),(ipAddress >> 16 & 0xff),(ipAddress >> 24 & 0xff));
 
         getAndroidVersion();
 
@@ -195,7 +207,7 @@ public class ThankyouActivity extends AppCompatActivity {
 
         mess += temp + "</table>\n" +
                 "\n<p style=\"font-family: 'Calibri'; font-size: 12px;\">Feedback Date: " + formatteddate + "<br/>Feedback Time: " + formattedTime + "</p>" +
-                "\n\n<p style=\"font-family: 'Calibri'; font-size: 12px;\">Feedback sent from: <br/>Manufacturer: " + MANUFACTURER + "<br/>Model: " + myDeviceModel + "<br/>Android Version: " + androidVersion + "</p>" +
+                "\n\n<p style=\"font-family: 'Calibri'; font-size: 12px;\">Feedback sent from: <br/>Manufacturer: " + MANUFACTURER + "<br/>Model: " + myDeviceModel + "<br/>Android Version: " + androidVersion + "<br/>Device IP Address: " + ip  + "<br/>Device IMEI: " + imei  + "</p>" +
                 "<p class=\"x_MsoNormal\"><span style=\"font-size: 11pt; font-family: &quot;Calibri&quot;, sans-s &quot;EmojiFont&quot;; color: rgb(31, 73, 125);\\\">&nbsp;</span></p>" +
                 "<p class=\"x_MsoNormal\"><span style=\"font-size: 11pt; font-family: &quot;Calibri&quot;, sans-s &quot;EmojiFont&quot;; color: rgb(31, 73, 125);\\\">&nbsp;</span></p>" +
                 "<p class=\"x_MsoNormal\"><span style=\"font-size: 11pt; font-family: &quot;Calibri&quot;, sans-s &quot;EmojiFont&quot;; color: rgb(31, 73, 125);\\\">&nbsp;</span></p>" +
