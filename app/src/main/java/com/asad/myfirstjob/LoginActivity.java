@@ -1,12 +1,20 @@
 package com.asad.myfirstjob;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.app.AlertDialog;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -46,6 +54,9 @@ public class LoginActivity extends BaseActivity {
 
     NestedScrollView scroll_view;
 
+    private int PHONE_STATE_CODE=1;
+    String imei;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +70,8 @@ public class LoginActivity extends BaseActivity {
         Password = findViewById(R.id.pass_edt);
 
         scroll_view = findViewById(R.id.nestedScrollView);
+
+        loadImei();
 
         signUp = findViewById(R.id.signup_txt);
         signUp.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +159,7 @@ public class LoginActivity extends BaseActivity {
                             Intent in = new Intent(LoginActivity.this, CategoryActivity.class);
                             in.putExtra("login_username", username);
                             in.putExtra("email", em);
+                            in.putExtra("imei", imei);
                             startActivity(in);
                             finish();
                         }
@@ -160,9 +174,6 @@ public class LoginActivity extends BaseActivity {
 
             }
         });
-
-
-
 
         saveLogin = loginPreferences.getBoolean("saveLogin", false);
         if (saveLogin == true) {
@@ -232,6 +243,45 @@ public class LoginActivity extends BaseActivity {
             delegate.processFinish(result);
             //Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
             dialog.dismiss();
+        }
+    }
+
+    public void loadImei(){
+        TelephonyManager t = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE );
+        if (ContextCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+            imei =t.getDeviceId();
+        } else {
+            reqPhonePermission();
+        }
+    }
+
+    public void onRequestPermissionResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults ){
+        if(requestCode == PHONE_STATE_CODE){
+            if(grantResults.length > 0 && grantResults[0] ==  PackageManager.PERMISSION_GRANTED){
+                Toast.makeText(this,"Permission granted",Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this,"Permission denied",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void reqPhonePermission(){
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_PHONE_STATE)){
+            new AlertDialog.Builder(this).setTitle("permission needed").setMessage("this permission needed")
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            ActivityCompat.requestPermissions(LoginActivity.this,new String[]{Manifest.permission.READ_PHONE_STATE},PHONE_STATE_CODE);
+
+                        }
+                    }) .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            }).create().show();
+        } else {
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_PHONE_STATE},PHONE_STATE_CODE);
         }
     }
 
