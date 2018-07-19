@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,8 +23,6 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
-
 public class CategoryActivity extends AppCompatActivity {
 
     String str, email;
@@ -34,7 +33,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     TextView login, signup;
 
-    String user_email, loginUsername, signupUsername, user_email_new, imei;
+    String user_email, loginUsername, signupUsername, user_email_new, imei, address;
 
     public static Activity fa;
 
@@ -58,6 +57,7 @@ public class CategoryActivity extends AppCompatActivity {
         user_email_new = getIntent().getStringExtra("user_email_new");
         email = getIntent().getStringExtra("email");
         imei = getIntent().getStringExtra("imei");
+        address = getIntent().getStringExtra("address");
 
         login.setText(loginUsername);
         signup.setText(signupUsername);
@@ -65,6 +65,7 @@ public class CategoryActivity extends AppCompatActivity {
         editor.putString("Username", loginUsername);
         editor.putString("Email", email);
         editor.putString("imei", imei);
+        editor.putString("address", address);
         editor.commit();
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -95,7 +96,7 @@ public class CategoryActivity extends AppCompatActivity {
                     }
 
                     adapter = new MyCategoryAdapter(menuListItems, getApplicationContext());
-                    recyclerView.setAdapter(new AlphaInAnimationAdapter(adapter));
+                    recyclerView.setAdapter(adapter);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

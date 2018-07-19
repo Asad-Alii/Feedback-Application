@@ -70,7 +70,7 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
 
-        CategoryListItem categoryListItem = categoryListItems.get(position);
+        final CategoryListItem categoryListItem = categoryListItems.get(position);
 
         Calendar c = Calendar.getInstance();
         String formattedTime = df.format(c.getTime());
@@ -111,6 +111,8 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
             @Override
             public void onClick(View view, int position, boolean isClick) {
 
+                Toast.makeText(context, String.valueOf(categoryListItem.getCatImg()), Toast.LENGTH_SHORT).show();
+
                 if (holder.catdesc.getText().toString().equals(Breakfast) && breakfastTimeStart < currentTime && breakfastTimeEnd > currentTime)
                 {
                     timing = "Good Morning!";
@@ -118,7 +120,7 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
                     in.putExtra("catId", holder.catid.getText().toString());
                     in.putExtra("catDesc", holder.catdesc.getText().toString());
                     in.putExtra("timing", timing);
-                    context.startActivity(in);
+                    view.getContext().startActivity(in);
                     return;
                 }
 
@@ -129,7 +131,7 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
                     in.putExtra("catId", holder.catid.getText().toString());
                     in.putExtra("catDesc", holder.catdesc.getText().toString());
                     in.putExtra("timing", timing);
-                    context.startActivity(in);
+                    view.getContext().startActivity(in);
                     return;
                 }
 
@@ -140,7 +142,7 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
                     in.putExtra("catId", holder.catid.getText().toString());
                     in.putExtra("catDesc", holder.catdesc.getText().toString());
                     in.putExtra("timing", timing);
-                    context.startActivity(in);
+                    view.getContext().startActivity(in);
                     return;
                 }
 
@@ -151,7 +153,7 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
                     in.putExtra("catId", holder.catid.getText().toString());
                     in.putExtra("catDesc", holder.catdesc.getText().toString());
                     in.putExtra("timing", timing);
-                    context.startActivity(in);
+                    view.getContext().startActivity(in);
                     return;
                 }
 
@@ -162,7 +164,7 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
                     in.putExtra("catId", holder.catid.getText().toString());
                     in.putExtra("catDesc", holder.catdesc.getText().toString());
                     in.putExtra("timing", timing);
-                    context.startActivity(in);
+                    view.getContext().startActivity(in);
                     return;
                 }
 
