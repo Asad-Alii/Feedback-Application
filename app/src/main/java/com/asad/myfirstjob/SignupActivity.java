@@ -22,9 +22,9 @@ public class SignupActivity extends AppCompatActivity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
 
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z._-]+\\.+[a-z]+";
+    String emailPattern = "[a-zA-Z0-9._-a-zA-Z0-9]+@[a-z._-]+\\.+[a-z]+";
 
-    String json_string;
+    String imei, address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,9 @@ public class SignupActivity extends AppCompatActivity {
 
         signup = findViewById(R.id.btn_signup);
 
+        imei = getIntent().getStringExtra("imei");
+        address = getIntent().getStringExtra("address");
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,18 +58,6 @@ public class SignupActivity extends AppCompatActivity {
 
         if (v.getId() == R.id.btn_signup)
         {
-            /*EditText name = findViewById(R.id.name_edt);
-            EditText email = findViewById(R.id.email_edit);
-            EditText uname = findViewById(R.id.uname_edit);
-            EditText pass1 = findViewById(R.id.pass_edit1);
-            EditText pass2 = findViewById(R.id.pass_edit2);
-
-            String nameStr = name.getText().toString();
-            String emailStr = email.getText().toString();
-            String unameStr = uname.getText().toString();
-            String pass1Str = pass1.getText().toString();
-            String pass2Str = pass2.getText().toString();*/
-
             //User side validation
             if (TextUtils.isEmpty(Name.getText().toString()))
             {
@@ -92,6 +83,12 @@ public class SignupActivity extends AppCompatActivity {
                 return;
             }
 
+            if (Mobileno.getText().toString().length() > 11)
+            {
+                Toast.makeText(SignupActivity.this, "Incorrect Mobile number", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             if (Password1.getText().toString().length() < 4)
             {
                 Toast.makeText(SignupActivity.this, "Password too short", Toast.LENGTH_SHORT).show();
@@ -113,8 +110,14 @@ public class SignupActivity extends AppCompatActivity {
 
     public class AsyncSoapClass extends AsyncTask<String, Void, String>
     {
+        ProgressDialog pd = new ProgressDialog(SignupActivity.this);
 
-        private final ProgressDialog dialog = new ProgressDialog(SignupActivity.this);
+        @Override
+        protected void onPreExecute() {
+            pd.setMessage("loading");
+            pd.show();
+        }
+
         @Override
         protected String doInBackground(String... strings) {
 
@@ -123,12 +126,12 @@ public class SignupActivity extends AppCompatActivity {
 
             if (response == 1)
             {
-                return "Duplicate Email";
+                Toast.makeText(SignupActivity.this, "Duplicate Email", Toast.LENGTH_SHORT).show();
             }
 
             if (response == 2)
             {
-                return "Duplicate Mobile No.";
+                Toast.makeText(SignupActivity.this, "Duplicate Mobile No.", Toast.LENGTH_SHORT).show();;
             }
 
             if (response == 3)
@@ -144,20 +147,21 @@ public class SignupActivity extends AppCompatActivity {
                 Intent in = new Intent(SignupActivity.this, CategoryActivity.class);
                 in.putExtra("email", Email.getText().toString());
                 in.putExtra("login_username", Username.getText().toString());
+                in.putExtra("imei", imei);
+                in.putExtra("address", address);
                 startActivity(in);
                 finish();
-
-                return "Details Inserted";
             }
-            //return String.valueOf(response);
+
             return "Nothing";
         }
 
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            dialog.dismiss();
-            status.setText(result);
+            if (pd.isShowing()) {
+                pd.dismiss();
+            }
         }
     }
 }

@@ -51,7 +51,7 @@ public class ThankyouActivity extends AppCompatActivity {
     String MANUFACTURER = android.os.Build.MANUFACTURER;
     String myDeviceModel = android.os.Build.MODEL;
 
-    String imei;
+    String imei, address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +67,7 @@ public class ThankyouActivity extends AppCompatActivity {
         userName = pref.getString("Username", "Empty");
         email = pref.getString("Email", "Empty");
         imei = pref.getString("imei", "Empty");
+        address = pref.getString("address", "Empty");
 
         catId = getIntent().getStringExtra("catId");
         catDesc = getIntent().getStringExtra("catDesc");
@@ -140,8 +141,8 @@ public class ThankyouActivity extends AppCompatActivity {
     }
 
     protected void sendMail() {
-        final String username = "asadali786karachi@gmail.com";
-        final String password = "03332338869";
+        final String username = "no-reply@vs-pl.com";
+        final String password = "No-Reply@123";
 
         Calendar c = Calendar.getInstance();
         String formatteddate = dff.format(c.getTime());
@@ -207,7 +208,7 @@ public class ThankyouActivity extends AppCompatActivity {
 
         mess += temp + "</table>\n" +
                 "\n<p style=\"font-family: 'Calibri'; font-size: 12px;\">Feedback Date: " + formatteddate + "<br/>Feedback Time: " + formattedTime + "</p>" +
-                "\n\n<p style=\"font-family: 'Calibri'; font-size: 12px;\">Feedback sent from: <br/>Manufacturer: " + MANUFACTURER + "<br/>Model: " + myDeviceModel + "<br/>Android Version: " + androidVersion + "<br/>Device IP Address: " + ip  + "<br/>Device IMEI: " + imei  + "</p>" +
+                "\n\n<p style=\"font-family: 'Calibri'; font-size: 12px;\">Feedback sent from: <br/>Device Manufacturer: " + MANUFACTURER + "<br/>Device Model: " + myDeviceModel + "<br/>Device Android Version: " + androidVersion + "<br/>Device IP Address: " + ip  + "<br/>Device IMEI: " + imei  + "<br/>Device Location: " + address  + "</p>" +
                 "<p class=\"x_MsoNormal\"><span style=\"font-size: 11pt; font-family: &quot;Calibri&quot;, sans-s &quot;EmojiFont&quot;; color: rgb(31, 73, 125);\\\">&nbsp;</span></p>" +
                 "<p class=\"x_MsoNormal\"><span style=\"font-size: 11pt; font-family: &quot;Calibri&quot;, sans-s &quot;EmojiFont&quot;; color: rgb(31, 73, 125);\\\">&nbsp;</span></p>" +
                 "<p class=\"x_MsoNormal\"><span style=\"font-size: 11pt; font-family: &quot;Calibri&quot;, sans-s &quot;EmojiFont&quot;; color: rgb(31, 73, 125);\\\">&nbsp;</span></p>" +
@@ -227,7 +228,7 @@ public class ThankyouActivity extends AppCompatActivity {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.host", "mail.vs-pl.com");
         props.put("mail.smtp.port", "587");
 
         Session session = Session.getInstance(props,

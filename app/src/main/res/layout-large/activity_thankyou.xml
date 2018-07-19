@@ -32,7 +32,7 @@
             android:text="Thank You!"
             android:textColor="#3F51B5"
             android:textSize="32sp"
-            android:textStyle="bold" />
+            android:textStyle="italic" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -49,7 +49,7 @@
                 android:gravity="center"
                 android:textColor="#3F51B5"
                 android:textSize="30sp"
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textAllCaps="true"/>
 
             <TextView
@@ -60,7 +60,7 @@
                 android:gravity="center"
                 android:textColor="#3F51B5"
                 android:textSize="30sp"
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textAllCaps="true"/>
 
         </LinearLayout>
@@ -73,7 +73,7 @@
             android:text="We value your feedback."
             android:textColor="#3F51B5"
             android:textSize="30sp"
-            android:textStyle="bold"
+            android:textStyle="italic"
             android:layout_marginBottom="10dp"/>
 
         <ProgressBar
@@ -93,7 +93,7 @@
             android:text="Please wait while your feedback is recorded."
             android:textColor="#3F51B5"
             android:textSize="18sp"
-            android:textStyle="bold"
+            android:textStyle="italic"
             android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
