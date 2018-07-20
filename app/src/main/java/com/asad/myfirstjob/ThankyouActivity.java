@@ -262,10 +262,7 @@ public class ThankyouActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             mProgressView.setVisibility(View.VISIBLE);
-
         }
-
-
 
         @Override
         protected String doInBackground(Message... messages) {
@@ -283,9 +280,7 @@ public class ThankyouActivity extends AppCompatActivity {
                     mProgressView.setVisibility(View.GONE);
                 return "error2";
             }
-
         }
-
 
         @Override
         protected void onPostExecute(String result) {

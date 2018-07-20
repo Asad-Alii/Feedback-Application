@@ -45,11 +45,11 @@ public class FeedbackActivity extends AppCompatActivity {
     TextView feedbackDesc11, feedbackDesc12, feedbackDesc13, feedbackDesc14, feedbackDesc15, feedbackDesc16, feedbackDesc17, feedbackDesc18, feedbackDesc19, feedbackDesc20;
     EditText feedbackEditTxt1, feedbackEditTxt2, feedbackEditTxt3, feedbackEditTxt4, feedbackEditTxt5, feedbackEditTxt6, feedbackEditTxt7, feedbackEditTxt8, feedbackEditTxt9, feedbackEditTxt10;
     EditText feedbackEditTxt11, feedbackEditTxt12, feedbackEditTxt13, feedbackEditTxt14, feedbackEditTxt15, feedbackEditTxt16, feedbackEditTxt17, feedbackEditTxt18, feedbackEditTxt19, feedbackEditTxt20;
-    String feedback1, feedback2, feedback3, feedback4, feedback5, feedback6;
     List<String> feedbackDescArray = new ArrayList<>();
     List<String> serviceIdFeedbackArray = new ArrayList<>();
     Button feedbackBtn;
     List<String> feedbackRatingArray = new ArrayList<>();
+    List<String> testArray = new ArrayList<>();
 
 
     @Override
@@ -1508,6 +1508,13 @@ public class FeedbackActivity extends AppCompatActivity {
         feedbackDescArray.add(feedbackEditTxt18.getText().toString());
         feedbackDescArray.add(feedbackEditTxt19.getText().toString());
         feedbackDescArray.add(feedbackEditTxt20.getText().toString());
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                testArray.add(feedbackDescArray.get(i));
+            }
+        }
+
     }
 
     public void addInArrayOfSize1() {
@@ -1518,6 +1525,13 @@ public class FeedbackActivity extends AppCompatActivity {
         ratingArray.add(rating1);
 
         moodArray.add(mood1);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize2() {
@@ -1532,6 +1546,13 @@ public class FeedbackActivity extends AppCompatActivity {
 
         moodArray.add(mood1);
         moodArray.add(mood2);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize3() {
@@ -1550,6 +1571,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood1);
         moodArray.add(mood2);
         moodArray.add(mood3);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize4() {
@@ -1606,6 +1634,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood3);
         moodArray.add(mood4);
         moodArray.add(mood5);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize6() {
@@ -1636,6 +1671,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood4);
         moodArray.add(mood5);
         moodArray.add(mood6);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize7() {
@@ -1670,6 +1712,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood5);
         moodArray.add(mood6);
         moodArray.add(mood7);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize8() {
@@ -1708,6 +1757,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood6);
         moodArray.add(mood7);
         moodArray.add(mood8);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize9() {
@@ -1750,6 +1806,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood7);
         moodArray.add(mood8);
         moodArray.add(mood9);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize10() {
@@ -1796,6 +1859,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood8);
         moodArray.add(mood9);
         moodArray.add(mood10);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize11() {
@@ -1846,6 +1916,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood9);
         moodArray.add(mood10);
         moodArray.add(mood11);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize12() {
@@ -1900,6 +1977,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood10);
         moodArray.add(mood11);
         moodArray.add(mood12);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize13() {
@@ -1958,6 +2042,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood11);
         moodArray.add(mood12);
         moodArray.add(mood13);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize14() {
@@ -2020,6 +2111,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood12);
         moodArray.add(mood13);
         moodArray.add(mood14);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize15() {
@@ -2086,6 +2184,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood13);
         moodArray.add(mood14);
         moodArray.add(mood15);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize16() {
@@ -2156,6 +2261,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood14);
         moodArray.add(mood15);
         moodArray.add(mood16);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize17() {
@@ -2230,6 +2342,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood15);
         moodArray.add(mood16);
         moodArray.add(mood17);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize18() {
@@ -2308,6 +2427,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood16);
         moodArray.add(mood17);
         moodArray.add(mood18);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize19() {
@@ -2390,6 +2516,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood17);
         moodArray.add(mood18);
         moodArray.add(mood19);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public void addInArrayOfSize20() {
@@ -2476,6 +2609,13 @@ public class FeedbackActivity extends AppCompatActivity {
         moodArray.add(mood18);
         moodArray.add(mood19);
         moodArray.add(mood20);
+
+        for (int i = 0; i <= Integer.valueOf(ratingArray.size()) - 1; i++) {
+            if (Integer.valueOf(ratingArray.get(i)) == 1 || Integer.valueOf(ratingArray.get(i)) == 2) {
+                serviceIdFeedbackArray.add(serviceIdArray.get(i));
+                feedbackRatingArray.add(ratingArray.get(i));
+            }
+        }
     }
 
     public class AsyncSoapClass extends AsyncTask<String, Void, String> {
@@ -2494,25 +2634,25 @@ public class FeedbackActivity extends AppCompatActivity {
 
                 PropertyInfo pi = new PropertyInfo();
                 pi.setName("FeedBackDesc");
-                pi.setValue("Bekaar");
+                pi.setValue(String.valueOf(testArray.get(i)));
                 pi.setType(String.class);
                 request.addProperty(pi);
 
                 pi = new PropertyInfo();
                 pi.setName("ServiceCatID");
-                pi.setValue("2");
+                pi.setValue(String.valueOf(catId));
                 pi.setType(String.class);
                 request.addProperty(pi);
 
                 pi = new PropertyInfo();
                 pi.setName("ServiceID");
-                pi.setValue("1");
+                pi.setValue(String.valueOf(serviceIdFeedbackArray.get(i)));
                 pi.setType(String.class);
                 request.addProperty(pi);
 
                 pi = new PropertyInfo();
                 pi.setName("RatingID");
-                pi.setValue("2");
+                pi.setValue(String.valueOf(feedbackRatingArray.get(i)));
                 pi.setType(String.class);
                 request.addProperty(pi);
 
