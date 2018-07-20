@@ -11,6 +11,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -114,92 +115,96 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Toast.makeText(LoginActivity.this, "Testing", Toast.LENGTH_SHORT).show();
+                if(isNetworkConnected())
+                {
+                    LoginSoapClass asc = new LoginSoapClass(new AsyncResponse() {
+                        @Override
+                        public void processFinish(Object output) {
 
-                LoginSoapClass asc = new LoginSoapClass(new AsyncResponse() {
-                    @Override
-                    public void processFinish(Object output) {
+                            //Log.d("Asynchronous task:", (String) output);
 
-                        //Log.d("Asynchronous task:", (String) output);
+                            //int userno = 0;
+                            //String username = null;
+                            //String email = null;
+                            //String password;
 
-                        //int userno = 0;
-                        //String username = null;
-                        //String email = null;
-                        //String password;
+                            String em = Email.getText().toString();
+                            String pa = Password.getText().toString();
 
-                        String em = Email.getText().toString();
-                        String pa = Password.getText().toString();
+                            String passw = helper.searchPass(em);
 
-                        String passw = helper.searchPass(em);
+                            String uname = helper.searchPass1(em);
 
-                        String uname = helper.searchPass1(em);
+                            try {
 
-                        try {
+                                JSONObject user = (new JSONObject((String) output)).getJSONObject("users");
 
-                            JSONObject user = (new JSONObject((String) output)).getJSONObject("users");
+                                userno = user.getInt("UserNo");
+                                username = user.getString("UserName");
+                                email = user.getString("Email");
+                                password = user.getString("Password");
 
-                            userno = user.getInt("UserNo");
-                            username = user.getString("UserName");
-                            email = user.getString("Email");
-                            password = user.getString("Password");
-
-                            //Toast.makeText(LoginActivity.this, password, Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(LoginActivity.this, password, Toast.LENGTH_SHORT).show();
 
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            //Toast.makeText(LoginActivity.this, "Username and Password don't match!", Toast.LENGTH_SHORT).show();
-                        }
-
-                        if (!em.matches(emailPattern)) {
-                            Toast.makeText(LoginActivity.this, "Please enter valid email address", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-
-                        if (TextUtils.isEmpty(pa)) {
-                            Toast.makeText(LoginActivity.this, "Please enter your Password", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-
-                        if (pa.length() < 4) {
-                            Toast.makeText(LoginActivity.this, "Password too short", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-
-                        if (pa.equals(password)) {
-                            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                            imm.hideSoftInputFromWindow(Email.getWindowToken(), 0);
-
-                            emailToRemember = Email.getText().toString();
-                            passwordToRemember = Password.getText().toString();
-
-                            if (saveLoginCheckBox.isChecked()) {
-                                loginPrefsEditor.putBoolean("saveLogin", true);
-                                loginPrefsEditor.putString("email", emailToRemember);
-                                loginPrefsEditor.putString("password", passwordToRemember);
-                                loginPrefsEditor.commit();
-                            } else {
-                                loginPrefsEditor.clear();
-                                loginPrefsEditor.commit();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                //Toast.makeText(LoginActivity.this, "Username and Password don't match!", Toast.LENGTH_SHORT).show();
                             }
 
-                            Intent in = new Intent(LoginActivity.this, CategoryActivity.class);
-                            in.putExtra("login_username", username);
-                            in.putExtra("email", em);
-                            in.putExtra("imei", imei);
-                            in.putExtra("address", address);
-                            startActivity(in);
-                            finish();
-                        }
-                        else
-                        {
-                            Toast.makeText(LoginActivity.this, "Username and Password don't match!", Toast.LENGTH_SHORT).show();
-                        }
+                            if (!em.matches(emailPattern)) {
+                                Toast.makeText(LoginActivity.this, "Please enter valid email address", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
 
-                    }
-                });
-                asc.execute();
+                            if (TextUtils.isEmpty(pa)) {
+                                Toast.makeText(LoginActivity.this, "Please enter your Password", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
 
+                            if (pa.length() < 4) {
+                                Toast.makeText(LoginActivity.this, "Password too short", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+
+                            if (pa.equals(password)) {
+                                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                                imm.hideSoftInputFromWindow(Email.getWindowToken(), 0);
+
+                                emailToRemember = Email.getText().toString();
+                                passwordToRemember = Password.getText().toString();
+
+                                if (saveLoginCheckBox.isChecked()) {
+                                    loginPrefsEditor.putBoolean("saveLogin", true);
+                                    loginPrefsEditor.putString("email", emailToRemember);
+                                    loginPrefsEditor.putString("password", passwordToRemember);
+                                    loginPrefsEditor.commit();
+                                } else {
+                                    loginPrefsEditor.clear();
+                                    loginPrefsEditor.commit();
+                                }
+
+                                Intent in = new Intent(LoginActivity.this, CategoryActivity.class);
+                                in.putExtra("login_username", username);
+                                in.putExtra("email", em);
+                                in.putExtra("imei", imei);
+                                in.putExtra("address", address);
+                                startActivity(in);
+                                finish();
+                            }
+                            else
+                            {
+                                Toast.makeText(LoginActivity.this, "Username and Password don't match!", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
+                    asc.execute();
+                }
+                else
+                {
+                    Toast.makeText(LoginActivity.this, "No Internet connection!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -211,6 +216,12 @@ public class LoginActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null;
     }
 
     public class LoginSoapClass extends AsyncTask<String, String, String> {

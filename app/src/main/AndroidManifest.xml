@@ -37,9 +37,12 @@
         <activity android:name=".SignupActivity"
             android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity android:name=".CategoryActivity"/>
-        <activity android:name=".RatingActivity"/>
-        <activity android:name=".FeedbackActivity"/>
-        <activity android:name=".ThankyouActivity" />
+        <activity android:name=".RatingActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".FeedbackActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".ThankyouActivity"
+            android:configChanges="orientation|screenSize"/>
     </application>
 
     <meta-data

@@ -104,16 +104,13 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
 
         holder.catid.setText(categoryListItem.getServiceCatID());
         holder.catdesc.setText(categoryListItem.getServiceCatDesc());
-        Picasso.get().load("https://i.imgur.com/VQEsGHz.jpg").resize(100, 100).centerCrop().into(holder.catimg);
-
+        Picasso.get().load(categoryListItem.getCatImg()).resize(100, 100).centerCrop().into(holder.catimg);
 
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isClick) {
 
-                Toast.makeText(context, String.valueOf(categoryListItem.getCatImg()), Toast.LENGTH_SHORT).show();
-
-                if (holder.catdesc.getText().toString().equals(Breakfast) && breakfastTimeStart < currentTime && breakfastTimeEnd > currentTime)
+                if (holder.catdesc.getText().toString().equals(Breakfast) && coffeeTimeStart < currentTime && coffeeTimeEnd > currentTime)
                 {
                     timing = "Good Morning!";
                     Intent in = new Intent(context, RatingActivity.class);

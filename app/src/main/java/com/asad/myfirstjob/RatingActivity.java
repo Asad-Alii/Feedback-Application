@@ -30,9 +30,6 @@ public class RatingActivity extends AppCompatActivity {
 
     String catDesc, catId, timing;
 
-    TextView serid, serdesc;
-    SmileRating testing;
-
     SmileRating smRating1, smRating2, smRating3, smRating4, smRating5, smRating6, smRating7, smRating8, smRating9, smRating10;
     SmileRating smRating11, smRating12, smRating13, smRating14, smRating15, smRating16, smRating17, smRating18, smRating19, smRating20;
 
@@ -75,7 +72,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r1RatingSelected(level);
-                //mood1 = getSmRating(mood);
             }
         });
 
@@ -84,7 +80,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r2RatingSelected(level);
-                //mood2 = getSmRating(mood);
             }
         });
 
@@ -93,7 +88,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r3RatingSelected(level);
-                //mood3 = getSmRating(mood);
             }
         });
 
@@ -102,7 +96,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r4RatingSelected(level);
-                //mood4 = getSmRating(mood);
             }
         });
 
@@ -112,7 +105,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r5RatingSelected(level);
-                //mood5 = getSmRating(mood);
             }
         });
 
@@ -121,7 +113,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r6RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -130,7 +121,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r7RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -139,7 +129,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r8RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -148,7 +137,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r9RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -157,7 +145,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r10RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -166,7 +153,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r11RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -175,7 +161,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r12RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -184,7 +169,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r13RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -193,7 +177,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r14RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -202,7 +185,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r15RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -211,7 +193,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r16RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -220,7 +201,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r17RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -229,7 +209,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r18RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -238,7 +217,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r19RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -247,7 +225,6 @@ public class RatingActivity extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
 
                 r20RatingSelected(level);
-                //mood6 = getSmRating(mood);
             }
         });
 
@@ -278,11 +255,7 @@ public class RatingActivity extends AppCompatActivity {
                         cardviews[i].setVisibility(View.VISIBLE);
                         serviceIds[i] = findViewById(resID);
                         serviceDescs[i] = findViewById(descID);
-                        //serviceBtn.setVisibility(View.VISIBLE);
-
-                        //serviceIds[i].setText(String.valueOf(serviceIdArr.get(i)));
                         serviceDescs[i].setText(String.valueOf(serviceDescArr.get(i)));
-
                     }
 
                 } catch (JSONException e) {
@@ -383,8 +356,6 @@ public class RatingActivity extends AppCompatActivity {
                     public void onClick(View view) {
 
                         initRating();
-
-                        //Toast.makeText(RatingActivity.this, mood1, Toast.LENGTH_SHORT).show();
 
                         if (serviceIdArr.size() == 1) {
                             feedbackForSize1();
@@ -548,7 +519,6 @@ public class RatingActivity extends AppCompatActivity {
             return;
         } else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -577,7 +547,6 @@ public class RatingActivity extends AppCompatActivity {
             return;
         } else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -616,7 +585,6 @@ public class RatingActivity extends AppCompatActivity {
             return;
         } else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -723,7 +691,6 @@ public class RatingActivity extends AppCompatActivity {
             return;
         } else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -792,7 +759,6 @@ public class RatingActivity extends AppCompatActivity {
             return;
         } else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -872,7 +838,6 @@ public class RatingActivity extends AppCompatActivity {
         }
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -962,7 +927,6 @@ public class RatingActivity extends AppCompatActivity {
         }
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -1062,7 +1026,6 @@ public class RatingActivity extends AppCompatActivity {
         }
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -1172,7 +1135,6 @@ public class RatingActivity extends AppCompatActivity {
         }
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -1292,7 +1254,6 @@ public class RatingActivity extends AppCompatActivity {
         }
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -1422,7 +1383,6 @@ public class RatingActivity extends AppCompatActivity {
 
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -1562,7 +1522,6 @@ public class RatingActivity extends AppCompatActivity {
 
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -1712,7 +1671,6 @@ public class RatingActivity extends AppCompatActivity {
 
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -1872,7 +1830,6 @@ public class RatingActivity extends AppCompatActivity {
 
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -2042,7 +1999,6 @@ public class RatingActivity extends AppCompatActivity {
 
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -2222,7 +2178,6 @@ public class RatingActivity extends AppCompatActivity {
 
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -2412,7 +2367,6 @@ public class RatingActivity extends AppCompatActivity {
 
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -2612,7 +2566,6 @@ public class RatingActivity extends AppCompatActivity {
 
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -2822,7 +2775,6 @@ public class RatingActivity extends AppCompatActivity {
 
         else {
 
-            //Toast.makeText(RatingActivity.this, "Welcome Boy!", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(getApplicationContext(), FeedbackActivity.class);
             in.putExtra("catId", catId);
             in.putExtra("catDesc", catDesc);
@@ -7410,27 +7362,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r1 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r1 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r1 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r1 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r1 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7443,27 +7390,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r2 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r2 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r2 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r2 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r2 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7476,27 +7418,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r3 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r3 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r3 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r3 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r3 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7509,27 +7446,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r4 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r4 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r4 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r4 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r4 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7542,27 +7474,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r5 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r5 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r5 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r5 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r5 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7575,27 +7502,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r6 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r6 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r6 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r6 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r6 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7608,27 +7530,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r7 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r7 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r7 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r7 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r7 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7641,27 +7558,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r8 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r8 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r8 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r8 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r8 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7674,27 +7586,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r9 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r9 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r9 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r9 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r9 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7707,27 +7614,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r10 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r10 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r10 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r10 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r10 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7740,27 +7642,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r11 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r11 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r11 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r11 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r11 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7773,27 +7670,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r12 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r12 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r12 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r12 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r12 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7806,27 +7698,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r13 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r13 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r13 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r13 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r13 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7839,27 +7726,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r14 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r14 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r14 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r14 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r14 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7872,27 +7754,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r15 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r15 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r15 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r15 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r15 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7905,27 +7782,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r16 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r16 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r16 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r16 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r16 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7938,27 +7810,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r17 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r17 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r17 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r17 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r17 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -7971,27 +7838,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r18 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r18 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r18 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r18 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r18 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -8004,27 +7866,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r19 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r19 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r19 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r19 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r19 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;
@@ -8037,27 +7894,22 @@ public class RatingActivity extends AppCompatActivity {
 
         if (r20 == 1) {
             value = "Terrible";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r20 == 2) {
             value = "Bad";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r20 == 3) {
             value = "Okay";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r20 == 4) {
             value = "Good";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         if (r20 == 5) {
             value = "Great";
-            //Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         }
 
         return value;

@@ -10,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,7 +24,7 @@ import java.util.List;
 
 public class CategoryActivity extends AppCompatActivity {
 
-    String str, email;
+    String email;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -78,10 +77,8 @@ public class CategoryActivity extends AppCompatActivity {
 
                 Log.d("Asynchronous task:", (String) output);
 
-                str = removeCharAt((String) output);
-
                 try {
-                    JSONObject jsonObject = new JSONObject(str);
+                    JSONObject jsonObject = new JSONObject((String) output);
                     JSONArray array = jsonObject.getJSONArray("Menu");
 
                     for (int i = 0; i<array.length(); i++)
@@ -107,13 +104,6 @@ public class CategoryActivity extends AppCompatActivity {
         });
         as.execute();
 
-    }
-
-    private static String removeCharAt(String s) {
-
-        return new StringBuilder(s)
-                .deleteCharAt(s.length() - 3)
-                .toString();
     }
 
     public class getServicesAsyncClass extends AsyncTask<String, String, String>
