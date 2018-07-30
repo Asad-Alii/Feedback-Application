@@ -15,22 +15,20 @@ import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatTextView;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.maps.GoogleMap;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,9 +50,9 @@ public class LoginActivity extends AppCompatActivity {
     private SharedPreferences.Editor loginPrefsEditor;
     private Boolean saveLogin;
 
-    AppCompatTextView signUp;
-    AppCompatButton login;
-    TextInputEditText Email, Password;
+    TextView signUp;
+    Button login;
+    EditText Email, Password;
 
     String username, email, password;
     int userno;
@@ -72,9 +70,6 @@ public class LoginActivity extends AppCompatActivity {
 
     LocationManager locationManager;
     String value = null;
-    double dLat;
-    double dLong;
-    private GoogleMap mMap;
 
     String address1, address2, address3, address4, address;
 
@@ -121,13 +116,6 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void processFinish(Object output) {
 
-                            //Log.d("Asynchronous task:", (String) output);
-
-                            //int userno = 0;
-                            //String username = null;
-                            //String email = null;
-                            //String password;
-
                             String em = Email.getText().toString();
                             String pa = Password.getText().toString();
 
@@ -144,12 +132,9 @@ public class LoginActivity extends AppCompatActivity {
                                 email = user.getString("Email");
                                 password = user.getString("Password");
 
-                                //Toast.makeText(LoginActivity.this, password, Toast.LENGTH_SHORT).show();
-
-
-                            } catch (JSONException e) {
+                            }
+                            catch (JSONException e) {
                                 e.printStackTrace();
-                                //Toast.makeText(LoginActivity.this, "Username and Password don't match!", Toast.LENGTH_SHORT).show();
                             }
 
                             if (!em.matches(emailPattern)) {
@@ -199,7 +184,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         }
                     });
-                    asc.execute();
+                    asc.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
                 }
                 else
                 {
@@ -241,7 +226,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         @Override
-        protected String doInBackground(String... strings) {
+        protected String doInBackground(String... params) {
 
             String SOAP_ACTION = "http://apps.visualsolutions.work/getLoginDetail";
             String METHOD_NAME = "getLoginDetail";
@@ -356,20 +341,6 @@ public class LoginActivity extends AppCompatActivity {
                 double latti = location.getLatitude();
                 double longi = location.getLongitude();
 
-                //e1 = (EditText) findViewById(R.id.atLocationLat);
-                //e1.setText(latti + " , " + longi);
-                //value = e1.getText().toString();
-                //value = latti + " ," + longi;
-                //editor.putString("value", value);
-                //editor.commit();
-                //e2.setText(value);
-                //e2.setText("Latitude: " + longi);
-
-                //Geocoder geocoder;
-                //List<Address> addresses;
-                //geocoder = new Geocoder(this, Locale.getDefault());
-                //loc = findViewById(R.id.location_textview);
-
                 try {
                     Geocoder geocoder;
                     List<Address> addresses;
@@ -387,22 +358,13 @@ public class LoginActivity extends AppCompatActivity {
                     address2 = seperated[1].trim();
                     address3 = seperated[2].trim();
                     address4 = seperated[5].trim();
-                    //dLat = Double.parseDouble(latiPos);
-                    //dLong = Double.parseDouble(longiPos);
-                    //loc.setText(address1 + ", " + address2 + ", " + address3 + ", " + address4);
-                    //loc.setText(address);
                 }
                 catch (IOException e) {
                     e.printStackTrace();
                 }
+            }
+            else {
 
-
-                //((EditText)findViewById(R.id.atLocationLat)).setText("Latitude: " + latti);
-                //((EditText)findViewById(R.id.atLocationLong)).setText("Longitude: " + longi);
-
-            } else {
-                /*((EditText) findViewById(R.id.atLocationLat)).setText("Unable to find correct location.");
-                ((EditText) findViewById(R.id.atLocationLong)).setText("Unable to find correct location. ");*/
             }
         }
 

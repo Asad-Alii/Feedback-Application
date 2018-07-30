@@ -1,24 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v7.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bg"
+    android:orientation="vertical"
     tools:context=".SplashScreen">
 
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/visual_solutions_new"
+        android:layout_marginTop="80dp"/>
+
+    <android.support.v7.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/visual_solutions"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/visual_solutions_slogan"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_centerInParent="true"/>
+        android:layout_marginRight="40dp"/>
 
-    <ImageView
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="FEEDBACK"
+        android:textColor="#353335"
+        android:textSize="30sp"
+        app:fontFamily="@font/bowlby_one" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="APPLICATION"
+        android:textColor="#0a95eb"
+        android:textSize="26sp"
+        app:fontFamily="@font/bowlby_one"/>
+
+    <android.support.v7.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/email"
-        android:layout_alignParentBottom="true"/>
+        android:layout_weight="1"
+        android:scaleType="fitEnd"/>
 
-</RelativeLayout>
+</android.support.v7.widget.LinearLayoutCompat>

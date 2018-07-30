@@ -5,10 +5,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +35,7 @@ public class RatingActivity extends AppCompatActivity {
 
     TextView[] serviceIds;
     TextView[] serviceDescs;
-    CardView[] cardviews;
+    LinearLayout[] linearlayouts;
     Button serviceFeedbackBtn, serviceSubmitBtn;
 
     int r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20;
@@ -56,7 +56,7 @@ public class RatingActivity extends AppCompatActivity {
 
         serviceIds = new TextView[22];
         serviceDescs = new TextView[22];
-        cardviews = new CardView[22];
+        linearlayouts = new LinearLayout[22];
 
         controlInit();
 
@@ -247,12 +247,12 @@ public class RatingActivity extends AppCompatActivity {
 
                         String txtId = "serviceId" + (i + 1);
                         String txtDesc = "serviceDesc" + (i + 1);
-                        String cardviewId = "cardview" + (i + 1);
+                        String linearlayoutId = "linearlayout" + (i + 1);
                         int resID = getResources().getIdentifier(txtId, "id", getPackageName());
-                        int cardID = getResources().getIdentifier(cardviewId, "id", getPackageName());
+                        int linearID = getResources().getIdentifier(linearlayoutId, "id", getPackageName());
                         int descID = getResources().getIdentifier(txtDesc, "id", getPackageName());
-                        cardviews[i] = findViewById(cardID);
-                        cardviews[i].setVisibility(View.VISIBLE);
+                        linearlayouts[i] = findViewById(linearID);
+                        linearlayouts[i].setVisibility(View.VISIBLE);
                         serviceIds[i] = findViewById(resID);
                         serviceDescs[i] = findViewById(descID);
                         serviceDescs[i].setText(String.valueOf(serviceDescArr.get(i)));

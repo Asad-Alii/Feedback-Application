@@ -300,6 +300,8 @@ public class ThankyouActivity extends AppCompatActivity {
                                 Intent in = new Intent(ThankyouActivity.this, CategoryActivity.class);
                                 in.putExtra("login_username", userName);
                                 in.putExtra("email", email);
+                                in.putExtra("imei", imei);
+                                in.putExtra("address", address);
                                 startActivity(in);
                                 finish();
 

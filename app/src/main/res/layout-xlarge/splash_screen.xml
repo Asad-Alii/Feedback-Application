@@ -1,24 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v7.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bg"
+    android:orientation="vertical"
     tools:context=".SplashScreen">
 
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/visual_solutions"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_centerInParent="true"/>
+        android:layout_height="170dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/visual_solutions_new"
+        android:layout_marginTop="100dp"/>
 
-    <ImageView
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:text="FEEDBACK"
+        android:textColor="#333133"
+        android:textStyle="bold"
+        android:textSize="36sp"
+        android:fontFamily="serif"
+        android:layout_marginTop="10dp"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:text="APPLICATION"
+        android:textColor="#333133"
+        android:textStyle="bold"
+        android:textSize="36sp"
+        android:fontFamily="serif"/>
+
+    <android.support.v7.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/email"
-        android:layout_alignParentBottom="true"/>
+        android:layout_weight="1"
+        android:scaleType="fitEnd"/>
 
-</RelativeLayout>
+</android.support.v7.widget.LinearLayoutCompat>

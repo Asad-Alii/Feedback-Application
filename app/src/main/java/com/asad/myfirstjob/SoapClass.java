@@ -59,7 +59,7 @@ public class SoapClass {
 
             httptransport.call(SOAP_ACTION, envelope);
             //response = (SoapObject) envelope.getResponse();
-            response = (SoapObject) (SoapObject) envelope.bodyIn;
+            response = (SoapObject) envelope.bodyIn;
             //response = httptransport.responseDump;
             //response = (SoapPrimitive) envelope.getResponse();
 
@@ -69,7 +69,7 @@ public class SoapClass {
 
             //result = response.toString();
         } catch (Exception e) {
-            result = 3;
+            result = 4;
         }
         return result;
     }

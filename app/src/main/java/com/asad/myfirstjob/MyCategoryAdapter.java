@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -24,21 +25,22 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
     private Context context;
 
     SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+    SimpleDateFormat _12HourSDF = new SimpleDateFormat("hh:mm a");
 
-    SimpleDateFormat mts = new SimpleDateFormat("08:00"); // Breakfast start time
-    SimpleDateFormat mte = new SimpleDateFormat("11:00"); // breakfast end time
+    SimpleDateFormat mts = new SimpleDateFormat("08:00"); // Breakfast start fromTime
+    SimpleDateFormat mte = new SimpleDateFormat("11:00"); // breakfast end fromTime
 
-    SimpleDateFormat lts = new SimpleDateFormat("13:00"); // Lunch start time
-    SimpleDateFormat lte = new SimpleDateFormat("15:00"); // Lunch end time
+    SimpleDateFormat lts = new SimpleDateFormat("13:00"); // Lunch start fromTime
+    SimpleDateFormat lte = new SimpleDateFormat("15:00"); // Lunch end fromTime
 
-    SimpleDateFormat dts = new SimpleDateFormat("19:00"); // Dinner start time
-    SimpleDateFormat dte = new SimpleDateFormat("23:00"); // Dinner end time
+    SimpleDateFormat dts = new SimpleDateFormat("19:00"); // Dinner start fromTime
+    SimpleDateFormat dte = new SimpleDateFormat("23:00"); // Dinner end fromTime
 
-    SimpleDateFormat cts = new SimpleDateFormat("00:00"); // Coffee start time
-    SimpleDateFormat cte = new SimpleDateFormat("23:59"); // Coffee end time
+    SimpleDateFormat cts = new SimpleDateFormat("00:00"); // Coffee start fromTime
+    SimpleDateFormat cte = new SimpleDateFormat("23:59"); // Coffee end fromTime
 
-    SimpleDateFormat hts = new SimpleDateFormat("16:00"); // Hitea start time
-    SimpleDateFormat hte = new SimpleDateFormat("19:00"); // Hitea end time
+    SimpleDateFormat hts = new SimpleDateFormat("16:00"); // Hitea start fromTime
+    SimpleDateFormat hte = new SimpleDateFormat("19:00"); // Hitea end fromTime
 
     private long currentTime;
     private long breakfastTimeStart, breakfastTimeEnd;
@@ -52,7 +54,9 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
     String Lunch = "Lunch";
     String Dinner = "Dinner";
     String Coffee = "Coffee";
-    String Hitea = "Hitea";
+    String Hitea = "Hi-Tea";
+
+    String fromTime, toTime;
 
     public MyCategoryAdapter(List<CategoryListItem> categoryListItems, Context context) {
         this.categoryListItems = categoryListItems;
@@ -73,9 +77,22 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
         final CategoryListItem categoryListItem = categoryListItems.get(position);
 
         Calendar c = Calendar.getInstance();
-        String formattedTime = df.format(c.getTime());
 
-        String breakfastStart = mts.format(c.getTime());
+        try
+        {
+            final String formattedTime = df.format(c.getTime());
+            Date _24HourFromTime = df.parse(categoryListItem.getFromTime());
+            Date _24HourToTime = df.parse(categoryListItem.getToTime());
+            fromTime = _12HourSDF.format(_24HourFromTime);
+            toTime = _12HourSDF.format(_24HourToTime);
+            currentTime = parseTime(formattedTime).getTime();
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+
+        /*String breakfastStart = mts.format(c.getTime());
         String breakfastEnd = mte.format(c.getTime());
 
         String lunchStart = lts.format(c.getTime());
@@ -88,21 +105,10 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
         String coffeeEnd = cte.format(c.getTime());
 
         String hiteaStart = hts.format(c.getTime());
-        String hiteaEnd = hte.format(c.getTime());
+        String hiteaEnd = hte.format(c.getTime());*/
 
-        currentTime = parseTime(formattedTime).getTime();
-        breakfastTimeStart = parseTime(breakfastStart).getTime();
-        breakfastTimeEnd = parseTime(breakfastEnd).getTime();
-        lunchTimeStart = parseTime(lunchStart).getTime();
-        lunchTimeEnd = parseTime(lunchEnd).getTime();
-        dinnerTimeStart = parseTime(dinnerStart).getTime();
-        dinnerTimeEnd = parseTime(dinnerEnd).getTime();
-        coffeeTimeStart = parseTime(coffeeStart).getTime();
-        coffeeTimeEnd = parseTime(coffeeEnd).getTime();
-        hiteaTimeStart = parseTime(hiteaStart).getTime();
-        hiteaTimeEnd = parseTime(hiteaEnd).getTime();
-
-        holder.catid.setText(categoryListItem.getServiceCatID());
+        holder.fromTime.setText(fromTime);
+        holder.toTime.setText(toTime);
         holder.catdesc.setText(categoryListItem.getServiceCatDesc());
         Picasso.get().load(categoryListItem.getCatImg()).resize(100, 100).centerCrop().into(holder.catimg);
 
@@ -110,59 +116,89 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
             @Override
             public void onClick(View view, int position, boolean isClick) {
 
-                if (holder.catdesc.getText().toString().equals(Breakfast) && coffeeTimeStart < currentTime && coffeeTimeEnd > currentTime)
+                if (holder.catdesc.getText().toString().equals(Breakfast))
                 {
-                    timing = "Good Morning!";
-                    Intent in = new Intent(context, RatingActivity.class);
-                    in.putExtra("catId", holder.catid.getText().toString());
-                    in.putExtra("catDesc", holder.catdesc.getText().toString());
-                    in.putExtra("timing", timing);
-                    view.getContext().startActivity(in);
-                    return;
+                    breakfastTimeStart = parseTime(categoryListItem.getFromTime()).getTime();
+                    breakfastTimeEnd = parseTime(categoryListItem.getToTime()).getTime();
+
+                    if (breakfastTimeStart < currentTime && breakfastTimeEnd > currentTime)
+                    {
+                        timing = "Good Morning!";
+                        Intent in = new Intent(context, RatingActivity.class);
+                        in.putExtra("catId", categoryListItem.getServiceCatID());
+                        in.putExtra("catDesc", holder.catdesc.getText().toString());
+                        in.putExtra("timing", timing);
+                        view.getContext().startActivity(in);
+                        return;
+                    }
                 }
 
-                if (holder.catdesc.getText().toString().equals(Lunch) && lunchTimeStart < currentTime && lunchTimeEnd > currentTime)
+                if (holder.catdesc.getText().toString().equals(Lunch))
                 {
-                    timing = "Good AfterNoon!";
-                    Intent in = new Intent(context, RatingActivity.class);
-                    in.putExtra("catId", holder.catid.getText().toString());
-                    in.putExtra("catDesc", holder.catdesc.getText().toString());
-                    in.putExtra("timing", timing);
-                    view.getContext().startActivity(in);
-                    return;
+                    lunchTimeStart = parseTime(categoryListItem.getFromTime()).getTime();
+                    lunchTimeEnd = parseTime(categoryListItem.getToTime()).getTime();
+
+                    if (lunchTimeStart < currentTime && lunchTimeEnd > currentTime)
+                    {
+                        timing = "Good AfterNoon!";
+                        Intent in = new Intent(context, RatingActivity.class);
+                        in.putExtra("catId", categoryListItem.getServiceCatID());
+                        in.putExtra("catDesc", holder.catdesc.getText().toString());
+                        in.putExtra("timing", timing);
+                        view.getContext().startActivity(in);
+                        return;
+                    }
                 }
 
-                if (holder.catdesc.getText().toString().equals(Dinner) && dinnerTimeStart < currentTime && dinnerTimeEnd > currentTime)
+                if (holder.catdesc.getText().toString().equals(Dinner))
                 {
-                    timing = "Good Night!";
-                    Intent in = new Intent(context, RatingActivity.class);
-                    in.putExtra("catId", holder.catid.getText().toString());
-                    in.putExtra("catDesc", holder.catdesc.getText().toString());
-                    in.putExtra("timing", timing);
-                    view.getContext().startActivity(in);
-                    return;
+                    dinnerTimeStart = parseTime(categoryListItem.getFromTime()).getTime();
+                    dinnerTimeEnd = parseTime(categoryListItem.getToTime()).getTime();
+
+                    if (dinnerTimeStart < currentTime && dinnerTimeEnd > currentTime)
+                    {
+                        timing = "Good Night!";
+                        Intent in = new Intent(context, RatingActivity.class);
+                        in.putExtra("catId", categoryListItem.getServiceCatID());
+                        in.putExtra("catDesc", holder.catdesc.getText().toString());
+                        in.putExtra("timing", timing);
+                        view.getContext().startActivity(in);
+                        return;
+                    }
                 }
 
-                if ( holder.catdesc.getText().toString().equals(Coffee) && coffeeTimeStart < currentTime && coffeeTimeEnd > currentTime)
+                if ( holder.catdesc.getText().toString().equals(Coffee))
                 {
-                    timing = "Good Evening!";
-                    Intent in = new Intent(context, RatingActivity.class);
-                    in.putExtra("catId", holder.catid.getText().toString());
-                    in.putExtra("catDesc", holder.catdesc.getText().toString());
-                    in.putExtra("timing", timing);
-                    view.getContext().startActivity(in);
-                    return;
+                    coffeeTimeStart = parseTime(categoryListItem.getFromTime()).getTime();
+                    coffeeTimeEnd = parseTime(categoryListItem.getToTime()).getTime();
+
+                    if (coffeeTimeStart < currentTime && coffeeTimeEnd > currentTime)
+                    {
+                        timing = "Good Evening!";
+                        Intent in = new Intent(context, RatingActivity.class);
+                        in.putExtra("catId", categoryListItem.getServiceCatID());
+                        in.putExtra("catDesc", holder.catdesc.getText().toString());
+                        in.putExtra("timing", timing);
+                        view.getContext().startActivity(in);
+                        return;
+                    }
                 }
 
-                if ( holder.catdesc.getText().toString().equals(Hitea) && hiteaTimeStart < currentTime && hiteaTimeEnd > currentTime)
+                if ( holder.catdesc.getText().toString().equals(Hitea))
                 {
-                    timing = "Good Evening!";
-                    Intent in = new Intent(context, RatingActivity.class);
-                    in.putExtra("catId", holder.catid.getText().toString());
-                    in.putExtra("catDesc", holder.catdesc.getText().toString());
-                    in.putExtra("timing", timing);
-                    view.getContext().startActivity(in);
-                    return;
+                    hiteaTimeStart = parseTime(categoryListItem.getFromTime()).getTime();
+                    hiteaTimeEnd = parseTime(categoryListItem.getToTime()).getTime();
+
+                    if (hiteaTimeStart < currentTime && hiteaTimeEnd > currentTime)
+                    {
+                        timing = "Good Evening!";
+                        Intent in = new Intent(context, RatingActivity.class);
+                        in.putExtra("catId", categoryListItem.getServiceCatID());
+                        in.putExtra("catDesc", holder.catdesc.getText().toString());
+                        in.putExtra("timing", timing);
+                        view.getContext().startActivity(in);
+                        return;
+                    }
                 }
 
                 else
@@ -192,7 +228,8 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener
     {
 
-        public TextView catid;
+        public TextView fromTime;
+        public TextView toTime;
         public TextView catdesc;
         public ImageView catimg;
 
@@ -201,7 +238,8 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.Vi
         public ViewHolder(View itemView) {
             super(itemView);
 
-            catid = itemView.findViewById(R.id.txt_catId);
+            fromTime = itemView.findViewById(R.id.txt_fromTime);
+            toTime = itemView.findViewById(R.id.txt_toTime);
             catdesc = itemView.findViewById(R.id.txt_catDesc);
             catimg = itemView.findViewById(R.id.txt_catImg);
 

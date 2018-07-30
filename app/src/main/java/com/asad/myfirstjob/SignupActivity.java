@@ -38,8 +38,6 @@ public class SignupActivity extends AppCompatActivity {
         Password1 = findViewById(R.id.txt_password1);
         Password2 = findViewById(R.id.txt_password2);
 
-        status = findViewById(R.id.txt_status);
-
         signup = findViewById(R.id.btn_signup);
 
         imei = getIntent().getStringExtra("imei");
@@ -79,7 +77,7 @@ public class SignupActivity extends AppCompatActivity {
 
             if (TextUtils.isEmpty(Mobileno.getText().toString()))
             {
-                Toast.makeText(SignupActivity.this, "Please enter your User Name", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignupActivity.this, "Please enter your mobile number", Toast.LENGTH_SHORT).show();
                 return;
             }
 
