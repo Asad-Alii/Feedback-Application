@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
     android:orientation="vertical"
-    android:paddingBottom="10dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingTop="10dp"
     tools:context=".ThankyouActivity">
 
-    <ImageView
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/visual_solutions" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="left"
+            android:src="@drawable/visual_solutions_new"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"/>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/visual_solutions_slogan"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +43,7 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="Thank You!"
-            android:textColor="#3F51B5"
+            android:textColor="#333133"
             android:textSize="32sp"
             android:textStyle="italic" />
 
@@ -47,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center"
-                android:textColor="#3F51B5"
+                android:textColor="#333133"
                 android:textSize="30sp"
                 android:textStyle="italic"
                 android:textAllCaps="true"/>
@@ -58,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center"
-                android:textColor="#3F51B5"
+                android:textColor="#333133"
                 android:textSize="30sp"
                 android:textStyle="italic"
                 android:textAllCaps="true"/>
@@ -71,7 +84,7 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="We value your feedback."
-            android:textColor="#3F51B5"
+            android:textColor="#333133"
             android:textSize="30sp"
             android:textStyle="italic"
             android:layout_marginBottom="10dp"/>
@@ -91,11 +104,19 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="Please wait while your feedback is recorded."
-            android:textColor="#3F51B5"
+            android:textColor="#333133"
             android:textSize="18sp"
             android:textStyle="italic"
             android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/email"
+        android:layout_weight="1"
+        android:scaleType="fitEnd"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

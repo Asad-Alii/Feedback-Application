@@ -43,6 +43,10 @@
             android:configChanges="orientation|screenSize"/>
         <activity android:name=".ThankyouActivity"
             android:configChanges="orientation|screenSize"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
     <meta-data

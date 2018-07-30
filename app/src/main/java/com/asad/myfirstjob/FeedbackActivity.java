@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,8 +39,8 @@ public class FeedbackActivity extends AppCompatActivity {
     List<String> serviceIdArray = new ArrayList<>();
     List<String> ratingArray = new ArrayList<>();
     List<String> moodArray = new ArrayList<>();
-    CardView cardView1, cardView2, cardView3, cardView4, cardView5, cardView6, cardView7, cardView8, cardView9, cardView10;
-    CardView cardView11, cardView12, cardView13, cardView14, cardView15, cardView16, cardView17, cardView18, cardView19, cardView20;
+    LinearLayout linearLayout1, linearLayout2, linearLayout3, linearLayout4, linearLayout5, linearLayout6, linearLayout7, linearLayout8, linearLayout9, linearLayout10;
+    LinearLayout linearLayout11, linearLayout12, linearLayout13, linearLayout14, linearLayout15, linearLayout16, linearLayout17, linearLayout18, linearLayout19, linearLayout20;
     TextView feedbackDesc1, feedbackDesc2, feedbackDesc3, feedbackDesc4, feedbackDesc5, feedbackDesc6, feedbackDesc7, feedbackDesc8, feedbackDesc9, feedbackDesc10;
     TextView feedbackDesc11, feedbackDesc12, feedbackDesc13, feedbackDesc14, feedbackDesc15, feedbackDesc16, feedbackDesc17, feedbackDesc18, feedbackDesc19, feedbackDesc20;
     EditText feedbackEditTxt1, feedbackEditTxt2, feedbackEditTxt3, feedbackEditTxt4, feedbackEditTxt5, feedbackEditTxt6, feedbackEditTxt7, feedbackEditTxt8, feedbackEditTxt9, feedbackEditTxt10;
@@ -73,121 +73,121 @@ public class FeedbackActivity extends AppCompatActivity {
 
                 addInFeedbackArray();
 
-                if (cardView1.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt1.getText().toString()))
+                if (linearLayout1.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt1.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc1.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView2.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt2.getText().toString()))
+                if (linearLayout2.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt2.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc2.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView3.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt3.getText().toString()))
+                if (linearLayout3.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt3.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc3.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView4.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt4.getText().toString()))
+                if (linearLayout4.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt4.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc4.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView5.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt5.getText().toString()))
+                if (linearLayout5.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt5.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc5.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView6.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt6.getText().toString()))
+                if (linearLayout6.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt6.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc6.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView7.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt7.getText().toString()))
+                if (linearLayout7.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt7.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc7.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView8.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt8.getText().toString()))
+                if (linearLayout8.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt8.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc8.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView9.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt9.getText().toString()))
+                if (linearLayout9.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt9.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc9.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView10.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt10.getText().toString()))
+                if (linearLayout10.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt10.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc10.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView11.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt11.getText().toString()))
+                if (linearLayout11.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt11.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc11.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView12.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt12.getText().toString()))
+                if (linearLayout12.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt12.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc12.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView13.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt13.getText().toString()))
+                if (linearLayout13.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt13.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc13.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView14.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt14.getText().toString()))
+                if (linearLayout14.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt14.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc14.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView15.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt15.getText().toString()))
+                if (linearLayout15.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt15.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc15.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView16.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt16.getText().toString()))
+                if (linearLayout16.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt16.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc16.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView17.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt17.getText().toString()))
+                if (linearLayout17.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt17.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc17.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView18.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt18.getText().toString()))
+                if (linearLayout18.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt18.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc18.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView19.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt19.getText().toString()))
+                if (linearLayout19.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt19.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc19.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (cardView20.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt20.getText().toString()))
+                if (linearLayout20.getVisibility() == View.VISIBLE && isEmpty(feedbackEditTxt20.getText().toString()))
                 {
                     Toast.makeText(FeedbackActivity.this, "Feedback about " + feedbackDesc20.getText().toString() + " is required!", Toast.LENGTH_SHORT).show();
                     return;
@@ -219,26 +219,26 @@ public class FeedbackActivity extends AppCompatActivity {
     public void controlInit() {
         feedbackBtn = findViewById(R.id.feedback_btn);
 
-        cardView1 = findViewById(R.id.cardview1);
-        cardView2 = findViewById(R.id.cardview2);
-        cardView3 = findViewById(R.id.cardview3);
-        cardView4 = findViewById(R.id.cardview4);
-        cardView5 = findViewById(R.id.cardview5);
-        cardView6 = findViewById(R.id.cardview6);
-        cardView7 = findViewById(R.id.cardview7);
-        cardView8 = findViewById(R.id.cardview8);
-        cardView9 = findViewById(R.id.cardview9);
-        cardView10 = findViewById(R.id.cardview10);
-        cardView11 = findViewById(R.id.cardview11);
-        cardView12 = findViewById(R.id.cardview12);
-        cardView13 = findViewById(R.id.cardview13);
-        cardView14 = findViewById(R.id.cardview14);
-        cardView15 = findViewById(R.id.cardview15);
-        cardView16 = findViewById(R.id.cardview16);
-        cardView17 = findViewById(R.id.cardview17);
-        cardView18 = findViewById(R.id.cardview18);
-        cardView19 = findViewById(R.id.cardview19);
-        cardView20 = findViewById(R.id.cardview20);
+        linearLayout1 = findViewById(R.id.linearlayout1);
+        linearLayout2 = findViewById(R.id.linearlayout2);
+        linearLayout3 = findViewById(R.id.linearlayout3);
+        linearLayout4 = findViewById(R.id.linearlayout4);
+        linearLayout5 = findViewById(R.id.linearlayout5);
+        linearLayout6 = findViewById(R.id.linearlayout6);
+        linearLayout7 = findViewById(R.id.linearlayout7);
+        linearLayout8 = findViewById(R.id.linearlayout8);
+        linearLayout9 = findViewById(R.id.linearlayout9);
+        linearLayout10 = findViewById(R.id.linearlayout10);
+        linearLayout11 = findViewById(R.id.linearlayout11);
+        linearLayout12 = findViewById(R.id.linearlayout12);
+        linearLayout13 = findViewById(R.id.linearlayout13);
+        linearLayout14 = findViewById(R.id.linearlayout14);
+        linearLayout15 = findViewById(R.id.linearlayout15);
+        linearLayout16 = findViewById(R.id.linearlayout16);
+        linearLayout17 = findViewById(R.id.linearlayout17);
+        linearLayout18 = findViewById(R.id.linearlayout18);
+        linearLayout19 = findViewById(R.id.linearlayout19);
+        linearLayout20 = findViewById(R.id.linearlayout20);
 
         feedbackDesc1 = findViewById(R.id.feedbackDesc1);
         feedbackDesc2 = findViewById(R.id.feedbackDesc2);
@@ -377,19 +377,19 @@ public class FeedbackActivity extends AppCompatActivity {
         if (Integer.valueOf(listSize) == 1) {
             addInArrayOfSize1();
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
         }
 
         if (Integer.valueOf(listSize) == 2) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
             addInArrayOfSize2();
@@ -397,17 +397,17 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 3) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
             addInArrayOfSize3();
@@ -417,22 +417,22 @@ public class FeedbackActivity extends AppCompatActivity {
 
             addInArrayOfSize4();
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
@@ -440,27 +440,27 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 5) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
             addInArrayOfSize5();
@@ -468,32 +468,32 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 6) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
             addInArrayOfSize6();
@@ -501,37 +501,37 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 7) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
             addInArrayOfSize7();
@@ -539,42 +539,42 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 8) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
             addInArrayOfSize8();
@@ -582,47 +582,47 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 9) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
             addInArrayOfSize9();
@@ -630,52 +630,52 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 10) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
             addInArrayOfSize10();
@@ -683,57 +683,57 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 11) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating11) == 1 || Integer.valueOf(rating11) == 2) {
-                cardView11.setVisibility(View.VISIBLE);
+                linearLayout11.setVisibility(View.VISIBLE);
                 feedbackDesc11.setText(serviceDesc6);
             }
             addInArrayOfSize11();
@@ -741,62 +741,62 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 12) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating11) == 1 || Integer.valueOf(rating11) == 2) {
-                cardView11.setVisibility(View.VISIBLE);
+                linearLayout11.setVisibility(View.VISIBLE);
                 feedbackDesc11.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating12) == 1 || Integer.valueOf(rating12) == 2) {
-                cardView12.setVisibility(View.VISIBLE);
+                linearLayout12.setVisibility(View.VISIBLE);
                 feedbackDesc12.setText(serviceDesc6);
             }
             addInArrayOfSize12();
@@ -804,67 +804,67 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 13) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating11) == 1 || Integer.valueOf(rating11) == 2) {
-                cardView11.setVisibility(View.VISIBLE);
+                linearLayout11.setVisibility(View.VISIBLE);
                 feedbackDesc11.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating12) == 1 || Integer.valueOf(rating12) == 2) {
-                cardView12.setVisibility(View.VISIBLE);
+                linearLayout12.setVisibility(View.VISIBLE);
                 feedbackDesc12.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating13) == 1 || Integer.valueOf(rating13) == 2) {
-                cardView13.setVisibility(View.VISIBLE);
+                linearLayout13.setVisibility(View.VISIBLE);
                 feedbackDesc13.setText(serviceDesc6);
             }
             addInArrayOfSize13();
@@ -872,72 +872,72 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 14) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating11) == 1 || Integer.valueOf(rating11) == 2) {
-                cardView11.setVisibility(View.VISIBLE);
+                linearLayout11.setVisibility(View.VISIBLE);
                 feedbackDesc11.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating12) == 1 || Integer.valueOf(rating12) == 2) {
-                cardView12.setVisibility(View.VISIBLE);
+                linearLayout12.setVisibility(View.VISIBLE);
                 feedbackDesc12.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating13) == 1 || Integer.valueOf(rating13) == 2) {
-                cardView13.setVisibility(View.VISIBLE);
+                linearLayout13.setVisibility(View.VISIBLE);
                 feedbackDesc13.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating14) == 1 || Integer.valueOf(rating14) == 2) {
-                cardView14.setVisibility(View.VISIBLE);
+                linearLayout14.setVisibility(View.VISIBLE);
                 feedbackDesc14.setText(serviceDesc6);
             }
             addInArrayOfSize14();
@@ -945,77 +945,77 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 15) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating11) == 1 || Integer.valueOf(rating11) == 2) {
-                cardView11.setVisibility(View.VISIBLE);
+                linearLayout11.setVisibility(View.VISIBLE);
                 feedbackDesc11.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating12) == 1 || Integer.valueOf(rating12) == 2) {
-                cardView12.setVisibility(View.VISIBLE);
+                linearLayout12.setVisibility(View.VISIBLE);
                 feedbackDesc12.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating13) == 1 || Integer.valueOf(rating13) == 2) {
-                cardView13.setVisibility(View.VISIBLE);
+                linearLayout13.setVisibility(View.VISIBLE);
                 feedbackDesc13.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating14) == 1 || Integer.valueOf(rating14) == 2) {
-                cardView14.setVisibility(View.VISIBLE);
+                linearLayout14.setVisibility(View.VISIBLE);
                 feedbackDesc14.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating15) == 1 || Integer.valueOf(rating15) == 2) {
-                cardView15.setVisibility(View.VISIBLE);
+                linearLayout15.setVisibility(View.VISIBLE);
                 feedbackDesc15.setText(serviceDesc6);
             }
             addInArrayOfSize15();
@@ -1023,82 +1023,82 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 16) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating11) == 1 || Integer.valueOf(rating11) == 2) {
-                cardView11.setVisibility(View.VISIBLE);
+                linearLayout11.setVisibility(View.VISIBLE);
                 feedbackDesc11.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating12) == 1 || Integer.valueOf(rating12) == 2) {
-                cardView12.setVisibility(View.VISIBLE);
+                linearLayout12.setVisibility(View.VISIBLE);
                 feedbackDesc12.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating13) == 1 || Integer.valueOf(rating13) == 2) {
-                cardView13.setVisibility(View.VISIBLE);
+                linearLayout13.setVisibility(View.VISIBLE);
                 feedbackDesc13.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating14) == 1 || Integer.valueOf(rating14) == 2) {
-                cardView14.setVisibility(View.VISIBLE);
+                linearLayout14.setVisibility(View.VISIBLE);
                 feedbackDesc14.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating15) == 1 || Integer.valueOf(rating15) == 2) {
-                cardView15.setVisibility(View.VISIBLE);
+                linearLayout15.setVisibility(View.VISIBLE);
                 feedbackDesc15.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating16) == 1 || Integer.valueOf(rating16) == 2) {
-                cardView16.setVisibility(View.VISIBLE);
+                linearLayout16.setVisibility(View.VISIBLE);
                 feedbackDesc16.setText(serviceDesc6);
             }
             addInArrayOfSize16();
@@ -1106,87 +1106,87 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 17) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating11) == 1 || Integer.valueOf(rating11) == 2) {
-                cardView11.setVisibility(View.VISIBLE);
+                linearLayout11.setVisibility(View.VISIBLE);
                 feedbackDesc11.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating12) == 1 || Integer.valueOf(rating12) == 2) {
-                cardView12.setVisibility(View.VISIBLE);
+                linearLayout12.setVisibility(View.VISIBLE);
                 feedbackDesc12.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating13) == 1 || Integer.valueOf(rating13) == 2) {
-                cardView13.setVisibility(View.VISIBLE);
+                linearLayout13.setVisibility(View.VISIBLE);
                 feedbackDesc13.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating14) == 1 || Integer.valueOf(rating14) == 2) {
-                cardView14.setVisibility(View.VISIBLE);
+                linearLayout14.setVisibility(View.VISIBLE);
                 feedbackDesc14.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating15) == 1 || Integer.valueOf(rating15) == 2) {
-                cardView15.setVisibility(View.VISIBLE);
+                linearLayout15.setVisibility(View.VISIBLE);
                 feedbackDesc15.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating16) == 1 || Integer.valueOf(rating16) == 2) {
-                cardView16.setVisibility(View.VISIBLE);
+                linearLayout16.setVisibility(View.VISIBLE);
                 feedbackDesc16.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating17) == 1 || Integer.valueOf(rating17) == 2) {
-                cardView17.setVisibility(View.VISIBLE);
+                linearLayout17.setVisibility(View.VISIBLE);
                 feedbackDesc17.setText(serviceDesc6);
             }
             addInArrayOfSize17();
@@ -1194,92 +1194,92 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 18) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating11) == 1 || Integer.valueOf(rating11) == 2) {
-                cardView11.setVisibility(View.VISIBLE);
+                linearLayout11.setVisibility(View.VISIBLE);
                 feedbackDesc11.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating12) == 1 || Integer.valueOf(rating12) == 2) {
-                cardView12.setVisibility(View.VISIBLE);
+                linearLayout12.setVisibility(View.VISIBLE);
                 feedbackDesc12.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating13) == 1 || Integer.valueOf(rating13) == 2) {
-                cardView13.setVisibility(View.VISIBLE);
+                linearLayout13.setVisibility(View.VISIBLE);
                 feedbackDesc13.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating14) == 1 || Integer.valueOf(rating14) == 2) {
-                cardView14.setVisibility(View.VISIBLE);
+                linearLayout14.setVisibility(View.VISIBLE);
                 feedbackDesc14.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating15) == 1 || Integer.valueOf(rating15) == 2) {
-                cardView15.setVisibility(View.VISIBLE);
+                linearLayout15.setVisibility(View.VISIBLE);
                 feedbackDesc15.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating16) == 1 || Integer.valueOf(rating16) == 2) {
-                cardView16.setVisibility(View.VISIBLE);
+                linearLayout16.setVisibility(View.VISIBLE);
                 feedbackDesc16.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating17) == 1 || Integer.valueOf(rating17) == 2) {
-                cardView17.setVisibility(View.VISIBLE);
+                linearLayout17.setVisibility(View.VISIBLE);
                 feedbackDesc17.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating18) == 1 || Integer.valueOf(rating18) == 2) {
-                cardView18.setVisibility(View.VISIBLE);
+                linearLayout18.setVisibility(View.VISIBLE);
                 feedbackDesc18.setText(serviceDesc6);
             }
             addInArrayOfSize18();
@@ -1287,97 +1287,97 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 19) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating11) == 1 || Integer.valueOf(rating11) == 2) {
-                cardView11.setVisibility(View.VISIBLE);
+                linearLayout11.setVisibility(View.VISIBLE);
                 feedbackDesc11.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating12) == 1 || Integer.valueOf(rating12) == 2) {
-                cardView12.setVisibility(View.VISIBLE);
+                linearLayout12.setVisibility(View.VISIBLE);
                 feedbackDesc12.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating13) == 1 || Integer.valueOf(rating13) == 2) {
-                cardView13.setVisibility(View.VISIBLE);
+                linearLayout13.setVisibility(View.VISIBLE);
                 feedbackDesc13.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating14) == 1 || Integer.valueOf(rating14) == 2) {
-                cardView14.setVisibility(View.VISIBLE);
+                linearLayout14.setVisibility(View.VISIBLE);
                 feedbackDesc14.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating15) == 1 || Integer.valueOf(rating15) == 2) {
-                cardView15.setVisibility(View.VISIBLE);
+                linearLayout15.setVisibility(View.VISIBLE);
                 feedbackDesc15.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating16) == 1 || Integer.valueOf(rating16) == 2) {
-                cardView16.setVisibility(View.VISIBLE);
+                linearLayout16.setVisibility(View.VISIBLE);
                 feedbackDesc16.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating17) == 1 || Integer.valueOf(rating17) == 2) {
-                cardView17.setVisibility(View.VISIBLE);
+                linearLayout17.setVisibility(View.VISIBLE);
                 feedbackDesc17.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating18) == 1 || Integer.valueOf(rating18) == 2) {
-                cardView18.setVisibility(View.VISIBLE);
+                linearLayout18.setVisibility(View.VISIBLE);
                 feedbackDesc18.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating19) == 1 || Integer.valueOf(rating19) == 2) {
-                cardView19.setVisibility(View.VISIBLE);
+                linearLayout19.setVisibility(View.VISIBLE);
                 feedbackDesc19.setText(serviceDesc6);
             }
             addInArrayOfSize19();
@@ -1385,102 +1385,102 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if (Integer.valueOf(listSize) == 20) {
             if (Integer.valueOf(rating1) == 1 || Integer.valueOf(rating1) == 2) {
-                cardView1.setVisibility(View.VISIBLE);
+                linearLayout1.setVisibility(View.VISIBLE);
                 feedbackDesc1.setText(serviceDesc1);
             }
 
             if (Integer.valueOf(rating2) == 1 || Integer.valueOf(rating2) == 2) {
-                cardView2.setVisibility(View.VISIBLE);
+                linearLayout2.setVisibility(View.VISIBLE);
                 feedbackDesc2.setText(serviceDesc2);
             }
 
             if (Integer.valueOf(rating3) == 1 || Integer.valueOf(rating3) == 2) {
-                cardView3.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
                 feedbackDesc3.setText(serviceDesc3);
             }
 
             if (Integer.valueOf(rating4) == 1 || Integer.valueOf(rating4) == 2) {
-                cardView4.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
                 feedbackDesc4.setText(serviceDesc4);
             }
 
             if (Integer.valueOf(rating5) == 1 || Integer.valueOf(rating5) == 2) {
-                cardView5.setVisibility(View.VISIBLE);
+                linearLayout5.setVisibility(View.VISIBLE);
                 feedbackDesc5.setText(serviceDesc5);
             }
 
             if (Integer.valueOf(rating6) == 1 || Integer.valueOf(rating6) == 2) {
-                cardView6.setVisibility(View.VISIBLE);
+                linearLayout6.setVisibility(View.VISIBLE);
                 feedbackDesc6.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating7) == 1 || Integer.valueOf(rating7) == 2) {
-                cardView7.setVisibility(View.VISIBLE);
+                linearLayout7.setVisibility(View.VISIBLE);
                 feedbackDesc7.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating8) == 1 || Integer.valueOf(rating8) == 2) {
-                cardView8.setVisibility(View.VISIBLE);
+                linearLayout8.setVisibility(View.VISIBLE);
                 feedbackDesc8.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating9) == 1 || Integer.valueOf(rating9) == 2) {
-                cardView9.setVisibility(View.VISIBLE);
+                linearLayout9.setVisibility(View.VISIBLE);
                 feedbackDesc9.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating10) == 1 || Integer.valueOf(rating10) == 2) {
-                cardView10.setVisibility(View.VISIBLE);
+                linearLayout10.setVisibility(View.VISIBLE);
                 feedbackDesc10.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating11) == 1 || Integer.valueOf(rating11) == 2) {
-                cardView11.setVisibility(View.VISIBLE);
+                linearLayout11.setVisibility(View.VISIBLE);
                 feedbackDesc11.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating12) == 1 || Integer.valueOf(rating12) == 2) {
-                cardView12.setVisibility(View.VISIBLE);
+                linearLayout12.setVisibility(View.VISIBLE);
                 feedbackDesc12.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating13) == 1 || Integer.valueOf(rating13) == 2) {
-                cardView13.setVisibility(View.VISIBLE);
+                linearLayout13.setVisibility(View.VISIBLE);
                 feedbackDesc13.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating14) == 1 || Integer.valueOf(rating14) == 2) {
-                cardView14.setVisibility(View.VISIBLE);
+                linearLayout14.setVisibility(View.VISIBLE);
                 feedbackDesc14.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating15) == 1 || Integer.valueOf(rating15) == 2) {
-                cardView15.setVisibility(View.VISIBLE);
+                linearLayout15.setVisibility(View.VISIBLE);
                 feedbackDesc15.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating16) == 1 || Integer.valueOf(rating16) == 2) {
-                cardView16.setVisibility(View.VISIBLE);
+                linearLayout16.setVisibility(View.VISIBLE);
                 feedbackDesc16.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating17) == 1 || Integer.valueOf(rating17) == 2) {
-                cardView17.setVisibility(View.VISIBLE);
+                linearLayout17.setVisibility(View.VISIBLE);
                 feedbackDesc17.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating18) == 1 || Integer.valueOf(rating18) == 2) {
-                cardView18.setVisibility(View.VISIBLE);
+                linearLayout18.setVisibility(View.VISIBLE);
                 feedbackDesc18.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating19) == 1 || Integer.valueOf(rating19) == 2) {
-                cardView19.setVisibility(View.VISIBLE);
+                linearLayout19.setVisibility(View.VISIBLE);
                 feedbackDesc19.setText(serviceDesc6);
             }
 
             if (Integer.valueOf(rating20) == 1 || Integer.valueOf(rating20) == 2) {
-                cardView20.setVisibility(View.VISIBLE);
+                linearLayout20.setVisibility(View.VISIBLE);
                 feedbackDesc20.setText(serviceDesc6);
             }
             addInArrayOfSize20();

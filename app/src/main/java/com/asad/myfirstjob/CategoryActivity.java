@@ -87,7 +87,9 @@ public class CategoryActivity extends AppCompatActivity {
                         CategoryListItem item = new CategoryListItem(
                                 o.getString("ServiceCatID"),
                                 o.getString("ServiceCatDesc"),
-                                o.getString("CatImg")
+                                o.getString("CatImg"),
+                                o.getString("FromTime"),
+                                o.getString("ToTime")
                         );
                         menuListItems.add(item);
                     }
@@ -145,7 +147,7 @@ public class CategoryActivity extends AppCompatActivity {
             {
 
                 httptransport.call(SOAP_ACTION, envelope);
-                response = (SoapObject) (SoapObject)envelope.bodyIn;
+                response = (SoapObject) envelope.bodyIn;
                 result = (response.getProperty(0).toString());
             }
             catch (Exception e)
