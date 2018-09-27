@@ -184,7 +184,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         }
                     });
-                    asc.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+                    asc.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 }
                 else
                 {
