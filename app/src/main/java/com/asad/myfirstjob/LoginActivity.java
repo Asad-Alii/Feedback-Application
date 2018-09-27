@@ -30,8 +30,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.GoogleMap;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.ksoap2.SoapEnvelope;
@@ -72,9 +70,6 @@ public class LoginActivity extends AppCompatActivity {
 
     LocationManager locationManager;
     String value = null;
-    double dLat;
-    double dLong;
-    private GoogleMap mMap;
 
     String address1, address2, address3, address4, address;
 
@@ -121,13 +116,6 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void processFinish(Object output) {
 
-                            //Log.d("Asynchronous task:", (String) output);
-
-                            //int userno = 0;
-                            //String username = null;
-                            //String email = null;
-                            //String password;
-
                             String em = Email.getText().toString();
                             String pa = Password.getText().toString();
 
@@ -144,12 +132,9 @@ public class LoginActivity extends AppCompatActivity {
                                 email = user.getString("Email");
                                 password = user.getString("Password");
 
-                                //Toast.makeText(LoginActivity.this, password, Toast.LENGTH_SHORT).show();
-
-
-                            } catch (JSONException e) {
+                            }
+                            catch (JSONException e) {
                                 e.printStackTrace();
-                                //Toast.makeText(LoginActivity.this, "Username and Password don't match!", Toast.LENGTH_SHORT).show();
                             }
 
                             if (!em.matches(emailPattern)) {
